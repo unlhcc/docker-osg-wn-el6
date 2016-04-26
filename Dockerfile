@@ -18,6 +18,10 @@ RUN yum -y install http://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rp
     yum clean all && \
     yum -y update
 
+# Create condor user and group
+RUN groupadd -r condor && \
+    useradd -r -g condor -d /var/lib/condor -s /sbin/nologin condor
+
 # Add HCC yum repo
 ADD hcc-el6.repo /etc/yum.repos.d/hcc.repo
 
