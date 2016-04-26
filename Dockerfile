@@ -22,13 +22,18 @@ RUN yum -y install http://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rp
 RUN groupadd -r condor && \
     useradd -r -g condor -d /var/lib/condor -s /sbin/nologin condor
 
-# Add HCC yum repo
-ADD hcc-el6.repo /etc/yum.repos.d/hcc.repo
+# Add lcmaps.db
+COPY lcmaps.db /etc/lcmaps.db
 
+# ----
 # Install local dependencies
-RUN yum -y install \
-        lcmaps-plugins-condor-update \
 
-# These plugins are not working inside Docker
+# Add HCC yum repo
+#COPY hcc-el6.repo /etc/yum.repos.d/hcc.repo
+
+#RUN yum -y install \
+# condor_chirp is not working
+#        lcmaps-plugins-condor-update \
+# These plugins give gLExec errors inside Docker
 #        lcmaps-plugins-mount-under-scratch \
 #        lcmaps-plugins-process-tracking
