@@ -24,5 +24,7 @@ ADD hcc-el6.repo /etc/yum.repos.d/hcc.repo
 # Install local dependencies
 RUN yum -y install \
         lcmaps-plugins-condor-update \
-        lcmaps-plugins-mount-under-scratch \
-        lcmaps-plugins-process-tracking
+
+# These plugins are not working inside Docker
+#        lcmaps-plugins-mount-under-scratch \
+#        lcmaps-plugins-process-tracking
