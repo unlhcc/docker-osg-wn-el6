@@ -1,7 +1,0 @@
-[hcc]
-name=HCC Packages for Enterprise Linux 6 - $basearch
-baseurl=http://t2.unl.edu/store/repos/hcc/6/hcc-el6/$basearch
-enabled=1
-gpgcheck=0
-priority=9
-

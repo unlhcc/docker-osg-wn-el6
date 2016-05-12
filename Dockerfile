@@ -27,16 +27,3 @@ RUN groupadd -r condor && \
 
 # Add lcmaps.db
 COPY lcmaps.db /etc/lcmaps.db
-
-# ----
-# Install local dependencies
-
-# Add HCC yum repo
-#COPY hcc-el6.repo /etc/yum.repos.d/hcc.repo
-
-#RUN yum -y install \
-# condor_chirp is not working
-#        lcmaps-plugins-condor-update \
-# These plugins give gLExec errors inside Docker
-#        lcmaps-plugins-mount-under-scratch \
-#        lcmaps-plugins-process-tracking
