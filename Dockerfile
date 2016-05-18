@@ -27,3 +27,5 @@ RUN groupadd -r condor && \
 
 # Add lcmaps.db
 COPY lcmaps.db /etc/lcmaps.db
+
+RUN yum -y install openssh-clients && yum clean all
