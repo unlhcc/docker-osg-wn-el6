@@ -29,3 +29,6 @@ RUN groupadd -r condor && \
 COPY lcmaps.db /etc/lcmaps.db
 
 RUN yum -y install openssh-clients && yum clean all
+
+# https://its.cern.ch/jira/projects/DMC/issues/DMC-861
+RUN yum update -y https://grid-deployment.web.cern.ch/grid-deployment/dms/dmc/repos/el6/x86_64/gfal2-util-1.4.0-r1607131615.el6.noarch.rpm && yum clean all
