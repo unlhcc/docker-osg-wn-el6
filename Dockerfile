@@ -14,12 +14,15 @@ FROM centos:centos6
 
 RUN yum -y install http://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm && \
     yum -y install epel-release && \
-    yum -y install osg-wn-client osg-wn-client-glexec cvmfs && \
-    yum -y install glibc-headers && \
-    yum -y install gcc && \
-    yum -y install redhat-lsb-core sssd-client && \
-    yum clean all && \
-    yum -y update
+    yum -y install cvmfs \
+                   gcc \
+                   glibc-headers \
+                   openssh-clients \
+                   osg-wn-client \
+                   osg-wn-client-glexec \
+                   redhat-lsb-core \
+                   sssd-client && \
+    yum clean all
 
 # Create condor user and group
 RUN groupadd -r condor && \
@@ -28,7 +31,9 @@ RUN groupadd -r condor && \
 # Add lcmaps.db
 COPY lcmaps.db /etc/lcmaps.db
 
-RUN yum -y install openssh-clients && yum clean all
+# yum update
+RUN yum update -y && \
+    yum clean all
 
 # https://its.cern.ch/jira/projects/DMC/issues/DMC-861
-RUN yum update -y https://grid-deployment.web.cern.ch/grid-deployment/dms/dmc/repos/el6/x86_64/gfal2-util-1.4.0-r1607131615.el6.noarch.rpm && yum clean all
+RUN yum update -y https://grid-deployment.web.cern.ch/grid-deployment/dms/dmc/repos/el6/x86_64/gfal2-util-1.4.0-r1608011343.el6.noarch.rpm && yum clean all
