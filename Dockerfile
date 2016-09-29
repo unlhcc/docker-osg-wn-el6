@@ -13,7 +13,8 @@ FROM centos:centos6
 # - gcc is required by GLOW jobs (builds matplotlib)
 
 RUN yum -y install http://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm && \
-    yum -y install epel-release && \
+    yum -y install epel-release \
+                   yum-plugin-priorities && \
     yum -y install cvmfs \
                    gcc \
                    glibc-headers \
@@ -36,4 +37,4 @@ RUN yum update -y && \
     yum clean all
 
 # https://its.cern.ch/jira/projects/DMC/issues/DMC-861
-RUN yum update -y https://grid-deployment.web.cern.ch/grid-deployment/dms/dmc/repos/el6/x86_64/gfal2-util-1.4.0-r1608011343.el6.noarch.rpm && yum clean all
+RUN yum update -y https://kojipkgs.fedoraproject.org//packages/gfal2-util/1.4.0/1.el6/noarch/gfal2-util-1.4.0-1.el6.noarch.rpm && yum clean all
