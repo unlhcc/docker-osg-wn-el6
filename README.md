@@ -7,4 +7,4 @@ Includes dependencies for running CMS and OSG jobs.
 
 View on [Docker Hub](https://hub.docker.com/r/unlhcc/osg-wn-el6/)
 
-[![](https://imagelayers.io/badge/unlhcc/osg-wn-el6:latest.svg)](https://imagelayers.io/?images=unlhcc/osg-wn-el6:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/version/unlhcc/osg-wn-el6.svg)](https://microbadger.com/images/unlhcc/osg-wn-el6 "Get your own version badge on microbadger.com")
