@@ -35,6 +35,3 @@ COPY lcmaps.db /etc/lcmaps.db
 # yum update
 RUN yum update -y && \
     yum clean all
-
-# https://its.cern.ch/jira/projects/DMC/issues/DMC-861
-RUN yum update -y https://kojipkgs.fedoraproject.org//packages/gfal2-util/1.4.0/1.el6/noarch/gfal2-util-1.4.0-1.el6.noarch.rpm && yum clean all
