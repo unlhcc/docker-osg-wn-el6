@@ -35,3 +35,6 @@ COPY lcmaps.db /etc/lcmaps.db
 # yum update
 RUN yum update -y && \
     yum clean all
+
+# Install Singularity
+RUN yum -y install --enablerepo osg-upcoming-development singularity && yum clean all
