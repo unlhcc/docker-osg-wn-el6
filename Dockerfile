@@ -38,3 +38,6 @@ RUN yum update -y && \
 
 # Install Singularity
 RUN yum -y install --enablerepo osg-upcoming-development singularity && yum clean all
+
+# Add singularity.conf
+COPY singularity.conf /etc/singularity/singularity.conf
