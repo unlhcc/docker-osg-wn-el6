@@ -190,6 +190,7 @@ glexec:
 
 ## Policy 1: GUMS but not SAZ (most common)
 verifyproxy -> gumsclient
+gumsclient -> mount_under_scratch
 #gumsclient -> condor_updates
 #condor_updates -> mount_under_scratch
 #mount_under_scratch -> tracking

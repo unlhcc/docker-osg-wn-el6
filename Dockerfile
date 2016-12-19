@@ -18,6 +18,7 @@ RUN yum -y install http://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rp
     yum -y install cvmfs \
                    gcc \
                    glibc-headers \
+                   lcmaps-plugins-mount-under-scratch \
                    openssh-clients \
                    osg-wn-client \
                    osg-wn-client-glexec \
