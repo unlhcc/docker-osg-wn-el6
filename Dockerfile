@@ -36,6 +36,7 @@ RUN yum -y install http://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rp
                    libXcursor libXext libXrandr libXft mesa-libGLU mesa-libGL \
                    e2fsprogs-libs libXi libXinerama libXft libXrender libXpm \
                    libcom_err && \
+    yum -y install --enablerepo osg-upcoming-development singularity && \
     yum clean all
 
 # Create condor user and group
@@ -48,6 +49,3 @@ COPY lcmaps.db /etc/lcmaps.db
 # yum update
 RUN yum update -y && \
     yum clean all
-
-# Install Singularity
-RUN yum -y install --enablerepo osg-upcoming-development singularity && yum clean all
