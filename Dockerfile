@@ -44,3 +44,6 @@ RUN yum -y install --enablerepo osg-testing singularity && \
 # yum update
 RUN yum update -y && \
     yum clean all
+
+# Disable overlay
+RUN perl -pi -e 's/^enable overlay =.*/enable overlay = no/g' /etc/singularity/singularity.conf
